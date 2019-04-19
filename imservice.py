@@ -21,6 +21,7 @@ def togPress(event=None):
     elif tydata.get()=='clearMessage':
         clearMessage()
     f2.delete(0,len(tydata.get()))
+    f2.focus_set()
 
 def task():
     '''check database for messages'''
@@ -51,6 +52,7 @@ def login():
         f2.pack()
         button.pack()
         l1.pack()
+        f2.focus_set()
 
 #port3=comSer('COM3',9600)
 m.title('Messaging Service')
