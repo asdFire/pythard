@@ -9,21 +9,25 @@ txdata=StringVar(m)
 #goes with test1.ino
 thBool={'key':False}
 
-def togPress():
+
+
+def togPress(event=None):
+    '''Send message after return or button is pressed'''
     dbProj.addData("imservice/messages",["message","username"],[tydata.get(),txdata.get()])
     f2.delete(0,len(tydata.get()))
-    
+
 def task():
+    '''check database for messages'''
     newM=dbProj.getBase("data/imservice/messages")
     l1['text']=""
     for thingy in newM.each():
         l1['text']=l1['text']+thingy.val()['username']+": "+thingy.val()['message']+"\n"
-    
+
     m.after(100, task)
 
 #port3=comSer('COM3',9600)
 m.title('Messaging Service')
-
+m.bind('<Return>', togPress)
 l2=tk.Label(text="Username:", fg="black", bg="white")
 l2.pack()
 f3 = tk.Entry(m,textvariable=txdata)
