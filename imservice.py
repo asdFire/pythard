@@ -42,7 +42,6 @@ def clearMessage():
 def login():
     '''set username so that it disapears'''
     if not txdata.get().strip()=='':
-        pUsername=txdata.get()
         l2.pack_forget()
         f3.pack_forget()
         buttonl.pack_forget()
