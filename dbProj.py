@@ -1,4 +1,4 @@
-import pyrebase4
+import pyrebase4 as pyrebase
 config = {
   "apiKey": "AIzaSyCwJJHvNPqeVDPNSVVH6I91MeSFHbmfKqQ",
   "authDomain": "testproject-2935a.firebaseapp.com",
